@@ -1,0 +1,11 @@
+Flask==2.3.3
+Flask-SQLAlchemy==3.0.5
+Flask-Migrate==4.0.4
+Flask-WTF==1.1.1
+python-dotenv==1.0.0
+Werkzeug==2.3.7
+SQLAlchemy==1.4.41
+typing-extensions==4.7.1
+pywin32==308
+waitress==2.1.2
+pyinstaller==6.12.0 

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Add New Vehicle Deal</h2>
+    </div>
+    <div class="card-body">
+        <form method="POST" class="needs-validation" novalidate>
+            <!-- Vehicle Details Section -->
+            <div class="mb-4">
+                <h3 class="border-bottom pb-2">Vehicle Details</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Registration Number</label>
+                        <input type="text" name="reg_no" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Make</label>
+                        <input type="text" name="make" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Model</label>
+                        <input type="text" name="model" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Copy</label>
+                        <input type="text" name="copy" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Engine Number</label>
+                        <input type="text" name="engine_no" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Chasis Number</label>
+                        <input type="text" name="chasis_no" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Registered To</label>
+                        <input type="text" name="registered_to" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Token</label>
+                        <input type="text" name="token" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buyer Details Section -->
+            <div class="mb-4">
+                <h3 class="border-bottom pb-2">Buyer Details</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Buyer Name</label>
+                        <input type="text" name="buyer_name" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">CNIC</label>
+                        <input type="text" name="buyer_cnic" class="form-control" required>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea name="buyer_address" class="form-control" rows="2" required></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Father's Name</label>
+                        <input type="text" name="buyer_father" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Contact</label>
+                        <input type="text" name="buyer_contact" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Purchase Date</label>
+                        <input type="date" name="purchase_date" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seller Details Section -->
+            <div class="mb-4">
+                <h3 class="border-bottom pb-2">Seller Details</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Seller Name</label>
+                        <input type="text" name="seller_name" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">CNIC</label>
+                        <input type="text" name="seller_cnic" class="form-control" required>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea name="seller_address" class="form-control" rows="2" required></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Father's Name</label>
+                        <input type="text" name="seller_father" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Contact</label>
+                        <input type="text" name="seller_contact" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Witness</label>
+                        <input type="text" name="seller_witness" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deal Details Section -->
+            <div class="mb-4">
+                <h3 class="border-bottom pb-2">Deal Details</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Deal Date</label>
+                        <input type="date" name="deal_date" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Deal Price</label>
+                        <input type="number" name="deal_price" class="form-control" step="0.01" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Advance Amount</label>
+                        <input type="number" name="advance_amount" class="form-control" step="0.01" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Balance Amount</label>
+                        <input type="number" name="balance_amount" class="form-control" step="0.01" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fas fa-save me-2"></i>Save Deal
+                </button>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary btn-lg ms-2">
+                    <i class="fas fa-times me-2"></i>Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+// Form validation
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+</script>
+{% endblock %} 

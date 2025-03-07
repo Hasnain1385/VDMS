@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h2 class="mb-0">Vehicle Details</h2>
+        <a href="{{ url_for('index') }}" class="btn btn-light">
+            <i class="fas fa-arrow-left me-2"></i>Back to Search
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <!-- Vehicle Details -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">Vehicle Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <th>Registration No.</th>
+                                <td>{{ vehicle.reg_no }}</td>
+                            </tr>
+                            <tr>
+                                <th>Make</th>
+                                <td>{{ vehicle.make }}</td>
+                            </tr>
+                            <tr>
+                                <th>Model</th>
+                                <td>{{ vehicle.model }}</td>
+                            </tr>
+                            <tr>
+                                <th>Copy</th>
+                                <td>{{ vehicle.copy }}</td>
+                            </tr>
+                            <tr>
+                                <th>Engine No.</th>
+                                <td>{{ vehicle.engine_no }}</td>
+                            </tr>
+                            <tr>
+                                <th>Chasis No.</th>
+                                <td>{{ vehicle.chasis_no }}</td>
+                            </tr>
+                            <tr>
+                                <th>Registered To</th>
+                                <td>{{ vehicle.registered_to }}</td>
+                            </tr>
+                            <tr>
+                                <th>Token</th>
+                                <td>{{ vehicle.token }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buyer Details -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Buyer Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <th>Name</th>
+                                <td>{{ vehicle.buyer_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>CNIC</th>
+                                <td>{{ vehicle.buyer_cnic }}</td>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <td>{{ vehicle.buyer_address }}</td>
+                            </tr>
+                            <tr>
+                                <th>Father's Name</th>
+                                <td>{{ vehicle.buyer_father }}</td>
+                            </tr>
+                            <tr>
+                                <th>Contact</th>
+                                <td>{{ vehicle.buyer_contact }}</td>
+                            </tr>
+                            <tr>
+                                <th>Purchase Date</th>
+                                <td>{{ vehicle.purchase_date.strftime('%Y-%m-%d') }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seller Details -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-warning text-dark">
+                        <h4 class="mb-0">Seller Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <th>Name</th>
+                                <td>{{ vehicle.seller_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>CNIC</th>
+                                <td>{{ vehicle.seller_cnic }}</td>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <td>{{ vehicle.seller_address }}</td>
+                            </tr>
+                            <tr>
+                                <th>Father's Name</th>
+                                <td>{{ vehicle.seller_father }}</td>
+                            </tr>
+                            <tr>
+                                <th>Contact</th>
+                                <td>{{ vehicle.seller_contact }}</td>
+                            </tr>
+                            <tr>
+                                <th>Witness</th>
+                                <td>{{ vehicle.seller_witness }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deal Details -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-danger text-white">
+                        <h4 class="mb-0">Deal Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <th>Deal Date</th>
+                                <td>{{ vehicle.deal_date.strftime('%Y-%m-%d') }}</td>
+                            </tr>
+                            <tr>
+                                <th>Deal Price</th>
+                                <td>Rs. {{ "%.2f"|format(vehicle.deal_price) }}</td>
+                            </tr>
+                            <tr>
+                                <th>Advance Amount</th>
+                                <td>Rs. {{ "%.2f"|format(vehicle.advance_amount) }}</td>
+                            </tr>
+                            <tr>
+                                <th>Balance Amount</th>
+                                <td>Rs. {{ "%.2f"|format(vehicle.balance_amount) }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
