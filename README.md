@@ -12,6 +12,8 @@ This repository contains deployment packages for different operating systems. Ch
 5. Once installed, run `BismillahMotors.exe` to start the application
 6. Access the application at http://localhost:5000
 
+*or just run the exe prebuild in /dist/app.exe*
+
 ### Linux Deployment
 1. Download `BismillahMotors_Linux.zip`
 2. Extract the zip file:
@@ -59,61 +61,6 @@ This repository contains deployment packages for different operating systems. Ch
 - macOS 10.15 (Catalina) or later
 - Python 3.11 or later
 - pip (Python package manager)
-
-## Troubleshooting
-
-### Common Issues
-1. Port 5000 is already in use
-   - Solution: Stop any other applications using port 5000
-   - Alternative: Change the port in config.py
-
-2. Permission Issues
-   - Windows: Run as administrator
-   - Linux/macOS: Use sudo for installation
-
-3. Python not found
-   - Install Python 3.11 or later from python.org
-   - Add Python to system PATH
-
-4. Database initialization fails
-   - Check write permissions in the data directory
-   - Ensure no other process is using the database
-
-### Platform-Specific Issues
-
-#### Windows
-- If antivirus blocks the application, add an exception
-- If Windows Defender blocks the executable, click "More info" and "Run anyway"
-
-#### Linux
-- If service fails to start, check logs:
-  ```bash
-  sudo journalctl -u bismillah-motors
-  ```
-- To restart the service:
-  ```bash
-  sudo systemctl restart bismillah-motors
-  ```
-
-#### macOS
-- If LaunchAgent fails, check logs:
-  ```bash
-  tail -f ~/Library/Logs/bismillah-motors.log
-  ```
-- To restart the service:
-  ```bash
-  launchctl unload ~/Library/LaunchAgents/com.bismillahmotors.app.plist
-  launchctl load ~/Library/LaunchAgents/com.bismillahmotors.app.plist
-  ```
-
-## Support
-
-For technical support, contact:
-- Email: support@bismillahmotors.com
-- Phone: [Your Support Phone Number]
-
-## License
-This software is licensed to Bismillah Motors. All rights reserved.
 
 # Vehicle Management System
 
